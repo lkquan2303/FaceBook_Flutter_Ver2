@@ -23,6 +23,8 @@ class UserStatus extends StatelessWidget {
         children: [
           CircleAvatar(
             backgroundImage: CachedNetworkImageProvider(currentUser.imageUrl),
+            maxRadius: getProportionateScreenWidth(20),
+            backgroundColor: Colors.transparent,
           ),
           SizedBox(
             width: 8.0,

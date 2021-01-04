@@ -16,6 +16,7 @@ class HomePage extends StatelessWidget {
           BodyHomePage(
             currentUser: currentUser,
             usersOnline: onlineUsers,
+            stories: stories,
           )
         ],
       ),

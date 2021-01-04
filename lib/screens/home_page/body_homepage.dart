@@ -1,10 +1,10 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:facebook_flutter_ver2/models/user_model.dart';
 import 'package:flutter/material.dart';
-import '../../config/constants.dart';
-import '../../config/constants.dart';
 import '../../config/size_config.dart';
+import '../../models/story_model.dart';
 import 'components/button_social_action.dart';
-import 'components/profile_avatar.dart';
+import 'components/online_user.dart';
 import 'components/user_status.dart';
 
 class BodyHomePage extends StatelessWidget {
@@ -12,10 +12,12 @@ class BodyHomePage extends StatelessWidget {
     Key key,
     @required this.currentUser,
     @required this.usersOnline,
+    @required this.stories,
   }) : super(key: key);
 
   final User currentUser;
   final List<User> usersOnline;
+  final List<Story> stories;
 
   @override
   Widget build(BuildContext context) {
@@ -24,42 +26,38 @@ class BodyHomePage extends StatelessWidget {
         child: Column(
           children: [
             UserStatus(currentUser: currentUser),
-            Divider(height: 4.0),
+            const SizedBox(height: 5.0),
             ButtonSocialAction(),
+            const SizedBox(height: 5.0),
+            OnlineUser(usersOnline: usersOnline),
             const SizedBox(height: 5.0),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
-              child: Container(
-                color: Colors.white,
-                child: Padding(
-                  padding: EdgeInsets.symmetric(
-                    vertical: getProportionateScreenWidth(6),
-                    horizontal: getProportionateScreenWidth(8),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: List.generate(usersOnline.length, (index) {
-                      if (index == 0) {
-                        return CreateRoomButton();
-                      }
-                      return Container(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: getProportionateScreenWidth(5),
-                          vertical: getProportionateScreenHeight(4),
-                        ),
-                        child: Container(
-                          child: ProfileAvatar(
-                            imgUrl: usersOnline[index].imageUrl,
-                            isActive: false,
-                          ),
-                        ),
-                      );
-                    }),
-                  ),
+              child: Row(
+                children: List.generate(
+                  stories.length + 1,
+                  (index) {
+                    // if (index == 0) {
+                    //   return Container(
+                    //     margin: const EdgeInsets.symmetric(horizontal: 8.0),
+                    //     height: 200,
+                    //     child: StoryCard(
+                    //       currentUser: currentUser, story: stories[index],
+                    //     ),
+                    //   );
+                    // }
+                    return Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 8.0),
+                      height: getProportionateScreenWidth(160),
+                      child: StoryCard(
+                        currentUser: currentUser,
+                        //  story: stories[index],
+                      ),
+                    );
+                  },
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),
@@ -67,33 +65,28 @@ class BodyHomePage extends StatelessWidget {
   }
 }
 
-class CreateRoomButton extends StatelessWidget {
+class StoryCard extends StatelessWidget {
+  final User currentUser;
+  final Story story;
+  final bool isAddStory;
+
+  const StoryCard({Key key, this.currentUser, this.story, this.isAddStory})
+      : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return OutlineButton(
-      onPressed: () {},
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(30),
-      ),
-      color: Colors.white,
-      borderSide: BorderSide(width: 3.0, color: kPrimaryColor),
-      textColor: kPrimaryColor,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          ShaderMask(
-            shaderCallback: (Rect bounds) =>
-                Palette.createRoomGradient.createShader(
-              bounds,
-            ),
-            child: Icon(
-              Icons.video_call,
-              size: getProportionateScreenHeight(35),
-            ),
+    return Stack(
+      children: [
+        ClipRRect(
+          borderRadius: BorderRadius.circular(20),
+          child: CachedNetworkImage(
+            imageUrl: currentUser.imageUrl,
+            fit: BoxFit.cover,
+            height: double.infinity,
+            width: getProportionateScreenWidth(100),
           ),
-          Text("Create\n Room")
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
