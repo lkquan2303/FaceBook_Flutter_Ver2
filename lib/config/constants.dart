@@ -1,4 +1,4 @@
-import 'package:facebook_flutter/config/size_config.dart';
+import 'package:facebook_flutter_ver2/config/size_config.dart';
 import 'package:flutter/material.dart';
 
 class Palette {

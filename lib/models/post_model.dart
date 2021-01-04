@@ -1,5 +1,6 @@
-import 'package:facebook_flutter/models/user_model.dart';
+import 'package:facebook_flutter_ver2/models/user_model.dart';
 import 'package:meta/meta.dart';
+
 class Post {
   final User user;
   final String caption;
