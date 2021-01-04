@@ -15,17 +15,21 @@ class BodyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
       child: Container(
-        color: Colors.white,
         child: Column(
           children: [
             UserStatus(currentUser: currentUser),
-            Divider(height: 10.0),
+            Divider(height: 4.0),
             ButtonSocialAction(),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 8),
+              child: Container(
+                height: 50,
+                color: Colors.red,
+              ),
+            )
           ],
         ),
       ),
     );
   }
 }
-
-

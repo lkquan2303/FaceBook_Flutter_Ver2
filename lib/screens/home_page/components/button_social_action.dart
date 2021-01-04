@@ -7,51 +7,54 @@ class ButtonSocialAction extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [
-        //MARK: Button Live
-        FlatButton.icon(
-          onPressed: () {
-            //TODO
-          },
-          icon: Icon(
-            Icons.videocam,
-            color: Colors.red,
+    return Container(
+      color: Colors.white,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          //MARK: Button Live
+          FlatButton.icon(
+            onPressed: () {
+              //TODO
+            },
+            icon: Icon(
+              Icons.videocam,
+              color: Colors.red,
+            ),
+            label: Text("Live"),
           ),
-          label: Text("Live"),
-        ),
-        VerticalDivider(
-          width: 8,
-        ),
+          VerticalDivider(
+            width: 8,
+          ),
 
-        //MARK: Button Photo
-        FlatButton.icon(
-          onPressed: () {
-            //TODO
-          },
-          icon: Icon(
-            Icons.photo_library,
-            color: Colors.green,
+          //MARK: Button Photo
+          FlatButton.icon(
+            onPressed: () {
+              //TODO
+            },
+            icon: Icon(
+              Icons.photo_library,
+              color: Colors.green,
+            ),
+            label: Text("Photo"),
           ),
-          label: Text("Photo"),
-        ),
-        VerticalDivider(
-          width: 8,
-        ),
+          VerticalDivider(
+            width: 8,
+          ),
 
-        //MARK: Button Room
-        FlatButton.icon(
-          onPressed: () {
-            //TODO
-          },
-          icon: Icon(
-            Icons.video_call,
-            color: Colors.purpleAccent,
+          //MARK: Button Room
+          FlatButton.icon(
+            onPressed: () {
+              //TODO
+            },
+            icon: Icon(
+              Icons.video_call,
+              color: Colors.purpleAccent,
+            ),
+            label: Text("Room"),
           ),
-          label: Text("Room"),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
