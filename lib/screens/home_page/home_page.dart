@@ -15,6 +15,7 @@ class HomePage extends StatelessWidget {
           AppBarHomePage(),
           BodyHomePage(
             currentUser: currentUser,
+            usersOnline: onlineUsers,
           )
         ],
       ),

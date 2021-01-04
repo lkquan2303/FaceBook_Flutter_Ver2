@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../config/size_config.dart';
 
 class ButtonSocialAction extends StatelessWidget {
   const ButtonSocialAction({
@@ -20,6 +21,7 @@ class ButtonSocialAction extends StatelessWidget {
             icon: Icon(
               Icons.videocam,
               color: Colors.red,
+              size: getProportionateScreenWidth(25),
             ),
             label: Text("Live"),
           ),
@@ -35,6 +37,7 @@ class ButtonSocialAction extends StatelessWidget {
             icon: Icon(
               Icons.photo_library,
               color: Colors.green,
+              size: getProportionateScreenWidth(25),
             ),
             label: Text("Photo"),
           ),
@@ -50,6 +53,7 @@ class ButtonSocialAction extends StatelessWidget {
             icon: Icon(
               Icons.video_call,
               color: Colors.purpleAccent,
+              size: getProportionateScreenWidth(25),
             ),
             label: Text("Room"),
           ),
