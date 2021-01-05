@@ -66,3 +66,14 @@ OutlineInputBorder outlineInputBorder() {
     borderSide: BorderSide(color: kTextColor),
   );
 }
+
+TextTheme textTheme() {
+  return TextTheme(
+    bodyText1: TextStyle(
+      color: kTextColor,
+    ),
+    bodyText2: TextStyle(
+      color: kTextColor,
+    ),
+  );
+}

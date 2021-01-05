@@ -17,30 +17,34 @@ class UserStory extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      scrollDirection: Axis.horizontal,
-      child: Row(
-        children: List.generate(
-          stories.length + 1,
-          (index) {
-            if (index == 0) {
+    return Container(
+      color: Colors.white,
+      padding: const EdgeInsets.symmetric(vertical: 10.0),
+      child: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: Row(
+          children: List.generate(
+            stories.length + 1,
+            (index) {
+              if (index == 0) {
+                return Container(
+                  margin: const EdgeInsets.symmetric(horizontal: 8.0),
+                  height: getProportionateScreenWidth(180),
+                  child: StoryCard(
+                    currentUser: currentUser,
+                    isAddStory: true,
+                  ),
+                );
+              }
               return Container(
-                margin: const EdgeInsets.symmetric(horizontal: 8.0),
+                margin: const EdgeInsets.symmetric(horizontal: 5.0),
                 height: getProportionateScreenWidth(180),
                 child: StoryCard(
-                  currentUser: currentUser,
-                  isAddStory: true,
+                  story: stories[index - 1],
                 ),
               );
-            }
-            return Container(
-              margin: const EdgeInsets.symmetric(horizontal: 8.0),
-              height: getProportionateScreenWidth(180),
-              child: StoryCard(
-                story: stories[index - 1],
-              ),
-            );
-          },
+            },
+          ),
         ),
       ),
     );

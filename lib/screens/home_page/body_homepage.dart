@@ -1,8 +1,10 @@
-import 'package:facebook_flutter_ver2/models/user_model.dart';
 import 'package:flutter/material.dart';
+import 'package:facebook_flutter_ver2/models/post_model.dart';
+import 'package:facebook_flutter_ver2/models/user_model.dart';
 import '../../models/story_model.dart';
 import 'components/button_social_action.dart';
 import 'components/user_online.dart';
+import 'components/user_post.dart';
 import 'components/user_status.dart';
 import 'components/user_story.dart';
 
@@ -12,11 +14,13 @@ class BodyHomePage extends StatelessWidget {
     @required this.currentUser,
     @required this.usersOnline,
     @required this.stories,
+    @required this.posts,
   }) : super(key: key);
 
   final User currentUser;
   final List<User> usersOnline;
   final List<Story> stories;
+  final List<Post> posts;
 
   @override
   Widget build(BuildContext context) {
@@ -31,6 +35,8 @@ class BodyHomePage extends StatelessWidget {
             OnlineUser(usersOnline: usersOnline),
             const SizedBox(height: 5.0),
             UserStory(stories: stories, currentUser: currentUser),
+            const SizedBox(height: 8.0),
+            UserPost(post: posts)
           ],
         ),
       ),
