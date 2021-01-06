@@ -1,5 +1,5 @@
 import 'package:facebook_flutter_ver2/config/constants.dart';
-import 'package:facebook_flutter_ver2/screens/home_page/home_page.dart';
+import 'package:facebook_flutter_ver2/screens/navigation_bar/nav_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
         scaffoldBackgroundColor: Palette.scaffold,
       ),
-      home: HomePage(),
+      home: NavScreen(),
     );
   }
 }
