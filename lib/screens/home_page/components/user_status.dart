@@ -33,6 +33,7 @@ class UserStatus extends StatelessWidget {
             child: TextField(
               decoration: InputDecoration.collapsed(
                 hintText: "What are you thinking?",
+                border: InputBorder.none,
               ),
             ),
           ),

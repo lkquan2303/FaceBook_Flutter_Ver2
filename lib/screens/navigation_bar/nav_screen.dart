@@ -5,6 +5,8 @@ import 'package:material_design_icons_flutter/material_design_icons_flutter.dart
 import 'custom_tab_bar.dart';
 
 class NavScreen extends StatefulWidget {
+  static String routeName = "/nav_screen";
+
   @override
   _NavScreenState createState() => _NavScreenState();
 }
