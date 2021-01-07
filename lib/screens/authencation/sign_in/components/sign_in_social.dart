@@ -1,25 +1,28 @@
+import 'package:facebook_flutter_ver2/animation/fade_animation.dart';
 import 'package:facebook_flutter_ver2/config/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-Row buildSocialSignIn() {
-  return Row(
-    mainAxisAlignment: MainAxisAlignment.center,
-    children: [
-      SocialSignIn(
-        image: "assets/icons/google-icon.svg",
-        onPress: () {},
-      ),
-      SocialSignIn(
-        image: "assets/icons/Phone.svg",
-        onPress: () {},
-      ),
-      SocialSignIn(
-        image: "assets/icons/twitter.svg",
-        onPress: () {},
-      ),
-    ],
-  );
+FadeAnimation buildSocialSignIn() {
+  return FadeAnimation(
+      1.3,
+      Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          SocialSignIn(
+            image: "assets/icons/google-icon.svg",
+            onPress: () {},
+          ),
+          SocialSignIn(
+            image: "assets/icons/Phone.svg",
+            onPress: () {},
+          ),
+          SocialSignIn(
+            image: "assets/icons/twitter.svg",
+            onPress: () {},
+          ),
+        ],
+      ));
 }
 
 class SocialSignIn extends StatelessWidget {

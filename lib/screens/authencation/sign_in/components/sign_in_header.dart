@@ -1,3 +1,4 @@
+import 'package:facebook_flutter_ver2/animation/fade_animation.dart';
 import 'package:facebook_flutter_ver2/config/size_config.dart';
 import 'package:flutter/material.dart';
 
@@ -9,13 +10,15 @@ class TitleDefault extends StatelessWidget {
   final String title;
   @override
   Widget build(BuildContext context) {
-    return Text(
-      title,
-      style: TextStyle(
-        fontSize: getProportionateScreenWidth(25),
-        fontWeight: FontWeight.bold,
-      ),
-    );
+    return FadeAnimation(
+        1.3,
+        Text(
+          title,
+          style: TextStyle(
+            fontSize: getProportionateScreenWidth(25),
+            fontWeight: FontWeight.bold,
+          ),
+        ));
   }
 }
 
@@ -27,11 +30,17 @@ class TitleDetails extends StatelessWidget {
   final String titleDetails;
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: SizeConfig.screenWidth * 0.7,
-      child: Text(titleDetails,
-          textAlign: TextAlign.center,
-          style: TextStyle(fontSize: getProportionateScreenWidth(15))),
-    );
+    return FadeAnimation(
+        1.3,
+        SizedBox(
+          width: SizeConfig.screenWidth * 0.8,
+          child: Text(
+            titleDetails,
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontSize: getProportionateScreenWidth(15),
+            ),
+          ),
+        ));
   }
 }

@@ -25,9 +25,10 @@ dependencies:
     sdk: flutter
   cached_network_image: ^2.2.0+1
   cupertino_icons: ^1.0.0
-  flutter_svg: ^0.19.2+1
+  flutter_svg: ^0.18.0
   material_design_icons_flutter: ^4.0.5345
-
+  simple_animations: ^0.0.10
+  sa_multi_tween: ^1.2.0
 dev_dependencies:
   flutter_test:
     sdk: flutter

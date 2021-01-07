@@ -15,36 +15,38 @@ class BodySignIn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 40),
+      padding: const EdgeInsets.symmetric(horizontal: 30),
       child: SizedBox(
         width: double.infinity,
-        child: Column(
-          children: [
-            sizedBoxSpacer(0.09),
-            TitleDefault(title: "Welcome Back"),
-            sizedBoxSpacer(0.02),
-            TitleDetails(
-              titleDetails:
-                  "Sign in with your email and password or continue with another media",
-            ),
-            sizedBoxSpacer(0.09),
-            buildEmailTextField(),
-            sizedBoxSpacer(0.03),
-            buildPasswordTextField(),
-            sizedBoxSpacer(0.02),
-            buildSignInAction(),
-            sizedBoxSpacer(0.03),
-            DefaultButton(
-              btnTitle: "Continue",
-              onPress: () {
-                Navigator.pushReplacementNamed(context, NavScreen.routeName);
-              },
-            ),
-            sizedBoxSpacer(0.1),
-            buildSocialSignIn(),
-            sizedBoxSpacer(0.1),
-            buildSignUpAction()
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              sizedBoxSpacer(0.06),
+              TitleDefault(title: "Welcome Back"),
+              sizedBoxSpacer(0.02),
+              TitleDetails(
+                titleDetails:
+                    "Sign in with your email and password or continue with another media",
+              ),
+              sizedBoxSpacer(0.06),
+              buildEmailTextField(),
+              sizedBoxSpacer(0.03),
+              buildPasswordTextField(),
+              sizedBoxSpacer(0.02),
+              buildSignInAction(),
+              sizedBoxSpacer(0.03),
+              DefaultButton(
+                btnTitle: "Continue",
+                onPress: () {
+                  Navigator.pushReplacementNamed(context, NavScreen.routeName);
+                },
+              ),
+              sizedBoxSpacer(0.08),
+              buildSocialSignIn(),
+              sizedBoxSpacer(0.06),
+              buildSignUpAction()
+            ],
+          ),
         ),
       ),
     );
