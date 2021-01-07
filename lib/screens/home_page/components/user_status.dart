@@ -31,9 +31,13 @@ class UserStatus extends StatelessWidget {
           ),
           Expanded(
             child: TextField(
-              decoration: InputDecoration.collapsed(
+
+              decoration: InputDecoration(
+                contentPadding: const EdgeInsets.symmetric(horizontal: 10),
                 hintText: "What are you thinking?",
                 border: InputBorder.none,
+                enabledBorder: InputBorder.none,
+                focusedBorder: InputBorder.none,
               ),
             ),
           ),
