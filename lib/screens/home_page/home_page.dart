@@ -11,7 +11,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       body: CustomScrollView(
         slivers: [
-          AppBarHomePage(),
+          AppBarHomePage(currentUser: currentUser),
           BodyHomePage(
             currentUser: currentUser,
             usersOnline: onlineUsers,

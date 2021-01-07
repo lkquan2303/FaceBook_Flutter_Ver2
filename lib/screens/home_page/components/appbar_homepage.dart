@@ -1,13 +1,17 @@
 import 'package:facebook_flutter_ver2/config/constants.dart';
 import 'package:facebook_flutter_ver2/config/size_config.dart';
+import 'package:facebook_flutter_ver2/models/user_model.dart';
+import 'package:facebook_flutter_ver2/screens/chat_room/chat_room.dart';
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-
 import 'icons_button_container.dart';
 
 class AppBarHomePage extends StatelessWidget {
+  final User currentUser;
+
   const AppBarHomePage({
     Key key,
+    @required this.currentUser,
   }) : super(key: key);
 
   @override
@@ -32,7 +36,13 @@ class AppBarHomePage extends StatelessWidget {
         ),
         IconsButtonContainer(
           icon: MdiIcons.facebookMessenger,
-          onPress: () {},
+          onPress: () {
+            Navigator.pushNamed(
+              context,
+              ChatRoom.routeName,
+              arguments: ChatRoomAgruments(currentUser: currentUser),
+            );
+          },
         ),
       ],
     );
