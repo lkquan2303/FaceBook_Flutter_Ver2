@@ -1,5 +1,6 @@
 import 'package:facebook_flutter_ver2/config/constants.dart';
 import 'package:facebook_flutter_ver2/config/size_config.dart';
+import 'package:facebook_flutter_ver2/data/data.dart';
 import 'package:facebook_flutter_ver2/models/user_model.dart';
 import 'package:facebook_flutter_ver2/screens/chat_room/chat_room.dart';
 import 'package:flutter/material.dart';
@@ -40,7 +41,7 @@ class AppBarHomePage extends StatelessWidget {
             Navigator.pushNamed(
               context,
               ChatRoom.routeName,
-              arguments: ChatRoomAgruments(currentUser: currentUser),
+              arguments: ChatRoomAgruments(currentUser: currentUser, onlineUsers: onlineUsers),
             );
           },
         ),

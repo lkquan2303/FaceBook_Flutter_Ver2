@@ -11,12 +11,17 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: buildThemeData(),
-      initialRoute: SignInPage.routeName,
-      routes: routes,
+    return GestureDetector(
+      onTap: () {
+        FocusScope.of(context).requestFocus(new FocusNode());
+      },
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Flutter Demo',
+        theme: buildThemeData(),
+        initialRoute: SignInPage.routeName,
+        routes: routes,
+      ),
     );
   }
 }

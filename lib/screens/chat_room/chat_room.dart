@@ -17,16 +17,19 @@ class ChatRoom extends StatelessWidget {
         ModalRoute.of(context).settings.arguments;
 
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: buildChatRoomAppBar(agruments),
-      body: BodyChatRoom(),
+      body: BodyChatRoom(agruments: agruments),
     );
   }
 }
 
 class ChatRoomAgruments {
   final User currentUser;
+  final List<User> onlineUsers;
 
   ChatRoomAgruments({
     @required this.currentUser,
+    @required this.onlineUsers,
   });
 }
