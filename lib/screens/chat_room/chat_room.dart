@@ -1,4 +1,4 @@
-import 'package:facebook_flutter_ver2/models/user_model.dart';
+import 'package:facebook_flutter_ver2/models/user_model/user_model.dart';
 import 'package:facebook_flutter_ver2/screens/chat_room/body_chat_room.dart';
 import 'package:flutter/material.dart';
 

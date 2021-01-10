@@ -1,4 +1,4 @@
-import 'package:facebook_flutter_ver2/models/user_model.dart';
+import 'package:facebook_flutter_ver2/models/user_model/user_model.dart';
 import 'package:meta/meta.dart';
 
 class Post {

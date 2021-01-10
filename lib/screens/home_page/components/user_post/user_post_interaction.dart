@@ -1,5 +1,5 @@
 import 'package:facebook_flutter_ver2/config/constants.dart';
-import 'package:facebook_flutter_ver2/models/post_model.dart';
+import 'package:facebook_flutter_ver2/models/user_model/post_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';

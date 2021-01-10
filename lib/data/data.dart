@@ -1,7 +1,7 @@
 
-import 'package:facebook_flutter_ver2/models/post_model.dart';
-import 'package:facebook_flutter_ver2/models/story_model.dart';
-import 'package:facebook_flutter_ver2/models/user_model.dart';
+import 'package:facebook_flutter_ver2/models/user_model/post_model.dart';
+import 'package:facebook_flutter_ver2/models/user_model/story_model.dart';
+import 'package:facebook_flutter_ver2/models/user_model/user_model.dart';
 
 final User currentUser = User(
   name: 'Quan Le',

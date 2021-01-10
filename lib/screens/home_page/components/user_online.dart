@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../../../config/constants.dart';
 import '../../../config/size_config.dart';
-import '../../../models/user_model.dart';
+import '../../../models/user_model/user_model.dart';
 
 class OnlineUser extends StatelessWidget {
   const OnlineUser({

@@ -1,8 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:facebook_flutter_ver2/config/constants.dart';
 import 'package:facebook_flutter_ver2/config/size_config.dart';
-import 'package:facebook_flutter_ver2/models/story_model.dart';
-import 'package:facebook_flutter_ver2/models/user_model.dart';
+import 'package:facebook_flutter_ver2/models/user_model/story_model.dart';
+import 'package:facebook_flutter_ver2/models/user_model/user_model.dart';
 import 'package:flutter/material.dart';
 
 class UserStory extends StatelessWidget {

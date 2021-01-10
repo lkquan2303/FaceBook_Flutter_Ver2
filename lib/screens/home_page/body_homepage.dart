@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:facebook_flutter_ver2/models/post_model.dart';
-import 'package:facebook_flutter_ver2/models/user_model.dart';
-import '../../models/story_model.dart';
+import 'package:facebook_flutter_ver2/models/user_model/post_model.dart';
+import 'package:facebook_flutter_ver2/models/user_model/user_model.dart';
+import '../../models/user_model/story_model.dart';
 import 'components/button_social_action.dart';
 import 'components/user_online.dart';
 import 'components/user_post.dart';

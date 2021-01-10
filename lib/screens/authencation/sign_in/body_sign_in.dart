@@ -1,11 +1,10 @@
 import 'package:facebook_flutter_ver2/components/default_button.dart';
 import 'package:facebook_flutter_ver2/helper/function_helper.dart';
-import 'package:facebook_flutter_ver2/screens/authencation/sign_in/components/sign_in_social.dart';
 import 'package:facebook_flutter_ver2/screens/navigation_bar/nav_screen.dart';
 import 'package:flutter/material.dart';
-
 import 'components/sign_in_form.dart';
 import 'components/sign_in_header.dart';
+import 'components/sign_in_social.dart';
 
 class BodySignIn extends StatelessWidget {
   const BodySignIn({

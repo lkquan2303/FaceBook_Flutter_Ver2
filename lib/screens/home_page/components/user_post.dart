@@ -1,6 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:facebook_flutter_ver2/config/size_config.dart';
-import 'package:facebook_flutter_ver2/models/post_model.dart';
+import 'package:facebook_flutter_ver2/models/user_model/post_model.dart';
 import 'package:facebook_flutter_ver2/screens/home_page/components/user_post/user_post_action.dart';
 import 'package:facebook_flutter_ver2/screens/home_page/components/user_post/user_post_header_caption.dart';
 import 'package:facebook_flutter_ver2/screens/home_page/components/user_post/user_post_interaction.dart';
