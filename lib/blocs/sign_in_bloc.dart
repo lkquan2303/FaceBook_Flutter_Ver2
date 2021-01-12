@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:io';
 
 import 'package:facebook_flutter_ver2/helper/validation.dart';
 import 'package:flutter/material.dart';
@@ -49,6 +50,7 @@ class SignInBloc {
       },
     );
 
+  
     // set up the AlertDialog
     AlertDialog alert = AlertDialog(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
@@ -59,6 +61,7 @@ class SignInBloc {
       ],
     );
     // show the dialog
+    if(Platform.isAndroid){
     showDialog(
       context: context,
       builder: (BuildContext context) {
@@ -67,6 +70,7 @@ class SignInBloc {
         );
       },
     );
+  }
   }
 
   dispose() {
