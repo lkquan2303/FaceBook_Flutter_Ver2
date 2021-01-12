@@ -1,6 +1,7 @@
-import 'dart:math';
+import 'dart:async';
 
 import 'package:facebook_flutter_ver2/helper/validation.dart';
+import 'package:flutter/material.dart';
 import 'package:rxdart/rxdart.dart';
 
 class SignInBloc {
@@ -8,10 +9,24 @@ class SignInBloc {
   final _passwordSubject = BehaviorSubject<String>();
   final _btnSubject = BehaviorSubject<bool>();
 
-  Stream<String> get emailStream => _emailSubject.stream;
+  var emailValidator = StreamTransformer<String, String>.fromHandlers(
+    handleData: (data, sink) => sink.add(
+      Validation.validateEmail(data),
+    ),
+  );
+
+  var passwordValidator = StreamTransformer<String, String>.fromHandlers(
+    handleData: (data, sink) => sink.add(
+      Validation.validatePass(data),
+    ),
+  );
+
+  Stream<String> get emailStream =>
+      _emailSubject.stream.transform(emailValidator);
   Sink<String> get emailSink => _emailSubject.sink;
 
-  Stream<String> get passwordStream => _passwordSubject.stream;
+  Stream<String> get passwordStream =>
+      _passwordSubject.stream.transform(passwordValidator);
   Sink<String> get passwordSink => _passwordSubject.sink;
 
   Stream<bool> get btnStream => _btnSubject.stream;
@@ -24,6 +39,34 @@ class SignInBloc {
     }).listen((event) {
       btnSink.add(event);
     });
+  }
+
+  createAlertDialog(BuildContext context) {
+    Widget okButton = FlatButton(
+      child: Text("OK"),
+      onPressed: () {
+        Navigator.pop(context);
+      },
+    );
+
+    // set up the AlertDialog
+    AlertDialog alert = AlertDialog(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+      title: Text("Error"),
+      content: Text("Please enter your account password"),
+      actions: [
+        okButton,
+      ],
+    );
+    // show the dialog
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return Container(
+          child: alert,
+        );
+      },
+    );
   }
 
   dispose() {

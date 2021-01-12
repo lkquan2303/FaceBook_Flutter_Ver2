@@ -14,6 +14,10 @@ class Validation {
   }
 
   static String validateEmail(String email) {
+    if (email == "") {
+      return "Email invalid";
+    }
+
     if (email == null) {
       return "Email invalid";
     }

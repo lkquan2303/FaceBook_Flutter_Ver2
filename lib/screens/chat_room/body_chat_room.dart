@@ -1,4 +1,3 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:facebook_flutter_ver2/components/search_textfield.dart';
 import 'package:facebook_flutter_ver2/config/size_config.dart';
 import 'package:flutter/material.dart';
